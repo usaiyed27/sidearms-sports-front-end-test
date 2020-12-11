@@ -1,0 +1,210 @@
+/* Base style */
+html, body{
+	padding:0;
+	margin: 0;
+    font-family: 'Roboto', 'sans-serif';
+}
+ul{
+	 list-style: none;
+     padding:0;
+     margin: 0;
+}
+
+li a{
+	 text-decoration: none;
+}
+
+nav {
+     background-color: #046A38;
+     border-top: 5px solid #F2A900;
+     border-bottom: 5px solid #F2A900;
+     padding: 0 20px;
+     height: 70px;
+     position: relative;
+    }
+
+/*** ***/
+
+/* Navigation for Device small than 1024px */
+/* Mobile first responsive layout */
+
+#menu {
+    position: absolute;
+    width: 40%;
+    top: 75px;
+    right: 0;
+    background-color: #046A38;
+    height: 0vh;
+}
+
+#menu > ul {
+    visibility: hidden;
+}
+
+#menu  > ul > li {
+    list-style: none;
+    border-bottom: 1px solid black;
+    font-weight: 600;
+}
+
+#menu > ul > li > a{
+	color: #fff;
+    padding: 15px 20px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+.sub-menu {
+    display: none;  
+}
+
+.sub-menu .title{
+    font-style: italic;
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.sub-menu > ul {
+    background-color: #02391E;
+}
+
+.sub-menu > ul > li{
+    padding: 12px 15px;
+    border-bottom: 1px solid #046A38;
+}
+
+.sub-menu > ul > li > a{
+    color: #fff;
+    font-weight: 100;
+}
+
+.sub-menu .title{
+    color: #F2A900;
+}
+
+button {
+    background: transparent;
+    border: none;
+    float: right;
+    margin: 14px 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#menu_close{
+    display: none;
+}
+
+.arrow {
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+}
+
+.rotate-arrow-up {
+    transform: rotate(220deg)!important;;
+}
+
+.rotate-arrow-down {
+    transform: rotate(0deg);
+}
+
+/*** ***/
+
+/* Navigation style for device larger than 1024px */
+@media only screen and (min-width: 1024px){
+
+    nav{
+        padding: 0;
+    }
+
+    #menu {
+        width: 100%;
+        top: 0;
+    }
+
+    #menu > ul {
+        display: flex;
+        padding: 0 20px;
+        visibility: visible;
+    }
+
+    #menu > ul > li {
+        border-bottom: none;
+        width: 20%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    #menu > ul > li > a{
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #menu > ul > li:hover{
+        background-color: #F2A900;
+        padding: 16px 0;
+    }
+
+    #menu > ul > li:hover > a{
+        color: #046A38;
+        font-weight: 700;
+    }
+
+    #menu > ul > li:hover .sub-menu{
+        background: #E3E3E3;
+        max-width: 100%;
+        position: absolute;
+        display: flex;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        transition: all ease .3s;
+        padding: 50px 0;
+    }
+
+    #menu > ul > li:hover .sub-menu ul {
+        margin: 0 20px;
+        padding: 0;
+        width: 50%;
+        text-align: left;
+        background-color: transparent;
+        display: block;
+    }
+
+    #menu > ul > li:hover .sub-menu ul li{
+            border-bottom: 1px solid #ccc;
+    }
+
+    .sub-menu{
+            display: none;
+    }
+       
+    .sub-menu .title{
+        font-style: normal;
+        color: #046A38;
+    }
+
+    .sub-menu > ul > li > a{
+        color: #666666;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    button {
+        display: none;
+    }
+
+    #menu > ul> li i {
+            display: none;
+    }
+}
+/*** ***/
